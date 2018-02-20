@@ -4,11 +4,11 @@ using Akka.Actor;
 
 namespace AkkaPlayground.Actors
 {
-    public class RootActor : UntypedActor
+    public class MainActor : UntypedActor
     {
         private List<IActorRef> _actorRefs;
 
-        public RootActor()
+        public MainActor()
         {
             _actorRefs = new List<IActorRef>
             {

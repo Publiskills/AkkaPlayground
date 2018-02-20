@@ -12,12 +12,12 @@ namespace AkkaPlayground
         {
             var actorSystem = ActorSystem.Create("AkkaPlaygroundActorSystem", GetAkkaConfigurationFromHoconFile());
 
-            var rootActor = actorSystem.ActorOf<RootActor>("rootUserActor");
+            var mainActor = actorSystem.ActorOf<MainActor>("mainUserActor");
 
             //Send some messages to awake the rootActor every 2 seconds
             for (var i = 0; i < 10; i++)
             {
-                rootActor.Tell("heartbeat");
+                mainActor.Tell("heartbeat");
                 System.Threading.Thread.Sleep(2000);
             }
 
